@@ -1,17 +1,15 @@
-package poly.store.service.impl;
+package com.example.java6.service.Impl;
 
-import java.io.File;
-
-import javax.servlet.ServletContext;
-
+import com.example.java6.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import poly.store.service.UploadService;
+import javax.servlet.ServletContext;
+import java.io.File;
 
 @Service
-public class UploadServiceImpl implements UploadService{
+public class UploadServiceImpl implements UploadService {
 
 	@Autowired
 	ServletContext app;

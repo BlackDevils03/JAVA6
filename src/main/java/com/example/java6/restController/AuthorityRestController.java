@@ -1,8 +1,7 @@
-package poly.store.rest.controller;
+package com.example.java6.restController;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.example.java6.entity.Authority;
+import com.example.java6.service.AuthoritiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import poly.store.entity.Authority;
-import poly.store.service.AuthorityService;
+import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
@@ -23,7 +22,7 @@ import poly.store.service.AuthorityService;
 public class AuthorityRestController {
 
 	@Autowired
-	AuthorityService authorityService;
+	AuthoritiesService authorityService;
 	
 	@GetMapping
 	public List<Authority> findAll(@RequestParam("admin") Optional<Boolean> admin){

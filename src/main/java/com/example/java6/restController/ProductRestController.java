@@ -1,7 +1,7 @@
-package poly.store.rest.controller;
+package com.example.java6.restController;
 
-import java.util.List;
-
+import com.example.java6.entity.Product;
+import com.example.java6.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,22 +13,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import poly.store.entity.Product;
-import poly.store.service.ProductService;
+import java.util.List;
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/rest/products")
 public class ProductRestController {
 	@Autowired
-	ProductService productService;
+private	ProductsService productService;
 	
 	@GetMapping()
 	public List<Product> getAll() {
 		return productService.findAll();
 	}
 	
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public Product getOne(@PathVariable("id")Integer id) {
 		return productService.findById(id);
 	}

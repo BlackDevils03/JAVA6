@@ -1,8 +1,8 @@
-package poly.store.service;
-
-import java.io.File;
+package com.example.java6.service;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 
 public interface UploadService {
 

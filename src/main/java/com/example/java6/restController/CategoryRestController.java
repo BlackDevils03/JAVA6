@@ -1,7 +1,7 @@
-package poly.store.rest.controller;
+package com.example.java6.restController;
 
-import java.util.List;
-
+import com.example.java6.entity.Category;
+import com.example.java6.service.CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,17 +13,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import poly.store.entity.Category;
-import poly.store.entity.Product;
-import poly.store.service.CategoryService;
-import poly.store.service.ProductService;
+import java.util.List;
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/rest/categories")
 public class CategoryRestController {
 	@Autowired
-	CategoryService categoryService;
+	private CategoriesService categoryService;
 	
 	@GetMapping()
 	public List<Category> getAll() {
